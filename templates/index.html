@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor_Speed_Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            max-width:fit-content;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- ambient,coolant,u_d,u_q,motor_speed,torque,i_d,i_q,pm,stator_yoke,stator_tooth,stator_winding,profile_id -->
+    <h1>Motor Speed Prediction</h1>
+    <form action="{{url_for('home')}}" method="post">
+        <span>
+            <label>Enter ambient</label>
+            <input type="text" name="ambient" required >
+        <!-- </span>
+        <br>
+        <span> -->
+            <label>Enter coolant</label>
+            <input type="text" name="coolant" required ></span>
+            <br>
+        <span>
+            <label>Enter u_d</label>
+            <input type="text" name="u_d" required > 
+            <!-- <br>
+        <span> -->
+            <label>Enter u_q</label>
+            <input type="text" name="u_q" required > </span>
+            <br>
+        <span>
+            <label>Enter torque</label>
+            <input type="text" name="torque" required > 
+            <!-- <br>
+        <span> -->
+            <label>Enter i_d</label>
+            <input type="text" name="i_d" required > </span>
+            <br>
+        <span>
+            <label>Enter i_q</label>
+            <input type="text" name="i_q" required > 
+            <!-- <br>
+        <span> -->
+            <label>Enter pm</label>
+            <input type="text" name="pm" required > </span>
+            <br>
+        <span>
+            <label>Enter stator_yoke</label>
+            <input  type="text" >
+            <!-- <br>
+        <span> -->
+            <label>Enter stator_tooth</label>
+            <input type="text" name="stator_tooth" required > </span>
+            <br>
+        <span>
+            <label>Enter stator_winding</label>
+            <input type="text"  >
+            <!-- <br>
+        <span> -->
+            <label>Enter profile_id</label>
+            <input type="text"  >
+        </span>
+        <br>
+        <input type="submit">
+    </form>
+
+    <h2>Predicted Motor Speed : {{result}}</h2>
+</body>
+</html>
