@@ -2,7 +2,7 @@ import pandas as pd
 
 import numpy as np
 
-df=pd.read_csv('temperature_data (1).csv')
+df=pd.read_csv('data_set/temperature_data.csv')
 df_copy=df.copy()
 
 df_copy.drop('profile_id',inplace=True,axis=1)
